@@ -1,0 +1,4 @@
+from parse_resumes_module import parse_resumes
+
+search_text = "data scientist"
+parse_resumes(search_text)
