@@ -53,3 +53,13 @@ def parse_resumes(search_text):
                 writer = csv.writer(f)
                 writer.writerow([title, specialization, salary, age, employment, 
                                  work_schedule, experience_years, experience_month, citizenship, sex])
+    with open(file_name, 'w', encoding='UTF8', newline='') as csv_file:
+        fieldnames = ['Title', 'Specialization', 'Salary', 'Age', 'Employment',
+                      'Work schedule', 'Experience years', 'Experience month', 'Citizenship', 'Sex']
+        writer = csv.writer(csv_file)
+        writer.writerow(fieldnames)
+
+        for resume in resumes:
+            writer.writerow(resume)
+
+    return file_name                                 
